@@ -3,20 +3,39 @@
 int main()
 {
 
-	ClapTrap Roger;
-	ClapTrap Stan("Stan");
+	ClapTrap CP_Roger("Roger");
+	ClapTrap CP_Stan("Stan");
 
-	std::cout << Stan.getName() << std::endl;
+	std::cout << "\n";
 
-	Roger = Stan;
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Roger.attack("Stan");
+	CP_Stan.takeDamage(CP_Roger.getAttackDamage());
 
-	std::cout << Roger.getName() << std::endl;
+	CP_Stan.takeDamage(11);
+	CP_Stan.takeDamage(11);
 
-	ClapTrap Alberto(Roger);
+	CP_Stan.attack("Andy");
 
-	std::cout << Alberto.getName() << std::endl;
+	CP_Stan.beRepaired(12);
 
-	Roger.attack("Alberto");
+	for (int i = 0; i < 11; i++)
+	{
+		CP_Stan.attack("Andy");
+	}
+
+
+
+	std::cout << "\n";cd .
 
 	return 0;
 }

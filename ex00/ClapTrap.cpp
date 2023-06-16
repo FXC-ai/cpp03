@@ -20,17 +20,17 @@ std::string	ClapTrap::getName() const
 	return this->_name;
 }
 
-int	ClapTrap::getHitPoints() const
+unsigned int	ClapTrap::getHitPoints() const
 {
 	return this->_HitPoints;
 }
 
-int	ClapTrap::getEnergyPoints() const
+unsigned int	ClapTrap::getEnergyPoints() const
 {
 	return this->_EnergyPoints;
 }
 
-int	ClapTrap::getAttackDamage() const
+unsigned int	ClapTrap::getAttackDamage() const
 {
 	return this->_AttackDamage;
 }
@@ -52,21 +52,44 @@ ClapTrap::ClapTrap(ClapTrap &src)
 
 void ClapTrap::attack(const std::string& target)
 {
-	if ()
+	if (this->_HitPoints == 0)
 	{
-		
+		std::cout << "ClapTrap " << this->_name << " can not attack anymore. He has not enough Hit Points." << std::endl;
 	}
-
-
-	if (this->_HitPoints > 0 && this->_EnergyPoints > 0)
+	else if (this->_EnergyPoints == 0)
 	{
-		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage!" <<std::endl;
+		std::cout << "ClapTrap " << this->_name << " can not attack anymore. He has not enough Energy Points." << std::endl;
 	}
 	else
 	{
-		std::cout << "Impossible to "
+		--this->_EnergyPoints;
+
+		std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_AttackDamage << " points of damage!" <<std::endl;
 	}
 }
 
-// void ClapTrap::takeDamage
+void ClapTrap::takeDamage(unsigned int amount)
+{
+	if (this->_HitPoints == 0)
+	{
+		std::cout << "ClapTrap " << this->_name << " has 0 Hit point. He can not take damage anymore." << std::endl;
+	}
+	else if (this->_HitPoints >= amount)
+	{
+		this->_HitPoints -= amount;
+		std::cout << "ClapTrap " << this->_name << " took " << amount << " of damage.";
+		std::cout << " He has " << this->_HitPoints << " Hit points left." <<std::endl;
+	}
+	else if (this->_HitPoints < amount)
+	{
+		this->_HitPoints = 0;
+		std::cout << "ClapTrap " << this->_name << " took " << amount << " of damage.";
+		std::cout << " He has " << this->_HitPoints << " Hit points left." <<std::endl;
+	}
+}
 
+void ClapTrap::beRepaired(unsigned int amount)
+{
+	this->_HitPoints += amount;
+	std::cout << "ClapTrap " << this->_name << " get " << amount << " of new points." <<std::endl;
+}

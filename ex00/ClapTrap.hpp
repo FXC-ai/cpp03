@@ -13,29 +13,21 @@ class ClapTrap
 		ClapTrap(ClapTrap &src);
 
 		std::string getName() const;
-		int getHitPoints() const;
-		int getEnergyPoints() const;
-		int getAttackDamage() const;
-
+		unsigned int getHitPoints() const;
+		unsigned int getEnergyPoints() const;
+		unsigned int getAttackDamage() const;
 
 		ClapTrap& operator=(ClapTrap const &rhs);
-
-
-
-		/*
-		
-		*/
-
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
 	private:
-		std::string _name;
-		int			_HitPoints;
-		int			_EnergyPoints;
-		int			_AttackDamage;
+		std::string				_name;
+		unsigned int			_HitPoints;
+		unsigned int			_EnergyPoints;
+		unsigned int			_AttackDamage;
 };
 
 
