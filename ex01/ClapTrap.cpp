@@ -12,7 +12,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	std::cout << "Constructor called. Name = " << this->_name <<std::endl;
+	std::cout << "ClapTrap constructor called. Name = " << this->_name <<std::endl;
 }
 
 std::string	ClapTrap::getName() const
