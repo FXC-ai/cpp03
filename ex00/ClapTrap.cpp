@@ -15,6 +15,11 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _HitPoints(10), _EnergyPoint
 	std::cout << "Constructor called. Name = " << this->_name <<std::endl;
 }
 
+ClapTrap::ClapTrap(std::string name, uint HitPoints, uint EnergyPoints, uint AttackDamage) : _name(name), _HitPoints(HitPoints), _EnergyPoints(EnergyPoints), _AttackDamage(AttackDamage)
+{
+	std::cout << "ClapTrap full constructor called. Name = "<< this->_name << std::endl;
+}
+
 std::string	ClapTrap::getName() const
 {
 	return this->_name;

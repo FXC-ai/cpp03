@@ -12,12 +12,14 @@ class ClapTrap
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap &src);
 
-		std::string getName() const;
+		ClapTrap(std::string name, unsigned int HitPoints, unsigned int EnergyPoints, unsigned int AttackDamage);
+
+		ClapTrap& operator=(ClapTrap const &rhs);
+
+		std::string	 getName() const;
 		unsigned int getHitPoints() const;
 		unsigned int getEnergyPoints() const;
 		unsigned int getAttackDamage() const;
-
-		ClapTrap& operator=(ClapTrap const &rhs);
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
@@ -28,9 +30,7 @@ class ClapTrap
 		unsigned int			_HitPoints;
 		unsigned int			_EnergyPoints;
 		unsigned int			_AttackDamage;
-
 	
 };
-
 
 #endif

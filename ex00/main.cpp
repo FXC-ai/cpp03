@@ -3,6 +3,9 @@
 int main()
 {
 
+	ClapTrap CP_super("FX", 150,20,12);
+	CP_super.attack("Voldemort");
+
 	ClapTrap CP_Roger("Roger");
 	ClapTrap CP_Stan("Stan");
 

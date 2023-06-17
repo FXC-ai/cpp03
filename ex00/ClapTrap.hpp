@@ -10,6 +10,7 @@ class ClapTrap
 		ClapTrap();
 		~ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, unsigned int HitPoints, unsigned int EnergyPoints, unsigned int AttackDamage);
 		ClapTrap(ClapTrap &src);
 
 		std::string getName() const;
