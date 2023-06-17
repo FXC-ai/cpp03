@@ -13,7 +13,7 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(ClapTrap &src)
 {
 	*this = src;
-	std::cout << "ClapTrap copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called." << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, uint HitPoints, uint EnergyPoints, uint AttackDamage) : _name(name), _HitPoints(HitPoints), _EnergyPoints(EnergyPoints), _AttackDamage(AttackDamage)
@@ -49,10 +49,6 @@ unsigned int	ClapTrap::getAttackDamage() const
 {
 	return this->_AttackDamage;
 }
-
-
-
-
 
 void ClapTrap::attack(const std::string& target)
 {

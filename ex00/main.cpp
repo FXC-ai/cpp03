@@ -2,63 +2,34 @@
 
 int main()
 {
+	std::cout << "\033[1;31mAppel du constructeur par defaut; :\033[0m" << std::endl;
+	ClapTrap CP_unamed;
+	std::cout << "\n";
 
-	ClapTrap CP_super("FX", 150,20,12);
-	CP_super.attack("Voldemort");
-
+	std::cout << "\033[1;31mAppel du constructeur ClapTrap(std::string name); :\033[0m" << std::endl;
 	ClapTrap CP_Roger("Roger");
 	ClapTrap CP_Stan("Stan");
-
 	std::cout << "\n";
 
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Roger.attack("Stan");
-	CP_Stan.takeDamage(CP_Roger.getAttackDamage());
+	std::cout << "\033[1;31mAppel du constructeur de copie :\033[0m" << std::endl;
+	ClapTrap CP_copyRoger(CP_Roger);
+	std::cout << "\n";
 
-	CP_Stan.takeDamage(11);
-	CP_Stan.takeDamage(11);
-
-	CP_Stan.attack("Andy");
-
-	CP_Stan.beRepaired(12);
-
-	for (int i = 0; i < 11; i++)
+	std::cout << "\033[1;31mRoger attaque Stan :\033[0m" << std::endl;
+	for (int i = 0; i < 11; ++i)
 	{
-		CP_Stan.attack("Andy");
+		CP_Roger.attack("Stan");
+		CP_Stan.takeDamage(CP_Roger.getAttackDamage());
+		std::cout << "\n";
 	}
 
+	std::cout << "\033[1;31mTest fonction void takeDamage(unsigned int amount); :\033[0m" << std::endl;
+	CP_Stan.takeDamage(8);
 	std::cout << "\n";
 
-	ClapTrap clap;
-	ClapTrap clapclap("Bob");
+	std::cout << "\033[1;31mTest fonction void beRepaired(unsigned int amount); :\033[0m" << std::endl;
+	CP_Stan.beRepaired(2);
 
-	clap.attack("Bob");
-	clapclap.attack("noName");
-
-	clapclap.beRepaired(199);
-	clapclap.takeDamage(1);
-	clapclap.takeDamage(300);
-	clapclap.beRepaired(199);
-
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-	clap.attack("Bob");
-
+	std::cout << "\n";
 	return 0;
 }
